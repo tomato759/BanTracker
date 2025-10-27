@@ -6,7 +6,7 @@ import logging
 import asyncio
 from discord.ext import tasks
 from typing import List, Optional
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, UTC
 
 try:
     import aiohttp
@@ -108,7 +108,7 @@ class BanTracker:
         embed = discord.Embed(
             title="📊 Ban Tracker Statistics",
             color=discord.Color.blue(),
-            timestamp=datetime.now(datetime.UTC)
+            timestamp=datetime.now(timezone.utc)
         )
         embed.add_field(name="⚔️ Watchdog Bans Tracked", value=f"{self.total_wd_tracked:,}", inline=True)
         embed.add_field(name="👮 Staff Bans Tracked", value=f"{self.total_staff_tracked:,}", inline=True)
