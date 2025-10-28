@@ -108,7 +108,7 @@ class BanTracker:
         embed = discord.Embed(
             title="📊 Ban Tracker Statistics",
             color=discord.Color.blue(),
-            timestamp=datetime.now(timezone.utc)
+            timestamp=datetime.now(UTC)
         )
         embed.add_field(name="⚔️ Watchdog Bans Tracked", value=f"{self.total_wd_tracked:,}", inline=True)
         embed.add_field(name="👮 Staff Bans Tracked", value=f"{self.total_staff_tracked:,}", inline=True)
